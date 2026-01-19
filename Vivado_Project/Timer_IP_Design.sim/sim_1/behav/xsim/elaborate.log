@@ -1,0 +1,32 @@
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/2025.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot TB_IP_Connection_behav xil_defaultlib.TB_IP_Connection xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-9380] size mismatch in mixed-language port association of VHDL port 'addr' [C:/Portfolio/Conception SoC/Vivado_proj/Timer_IP_Design/Timer_IP_Design.srcs/sources_1/new/TB_IP_Connection.v:14]
+WARNING: [VRFC 10-3091] actual bit length 23 differs from formal bit length 22 for port 'Addr' [C:/Portfolio/Conception SoC/Vivado_proj/Timer_IP_Design/Timer_IP_Design.srcs/sources_1/new/TB_IP_Connection.v:10]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'nBE' [C:/Portfolio/Conception SoC/Vivado_proj/Timer_IP_Design/Timer_IP_Design.srcs/sources_1/new/TB_IP_Connection.v:11]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Portfolio/Conception SoC/Vivado_proj/Timer_IP_Design/Timer_IP_Design.srcs/sources_1/new/Timer_PWM_IP.v" Line 1. Module Timer_PWM_IP doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Portfolio/Conception SoC/Vivado_proj/Timer_IP_Design/Timer_IP_Design.srcs/sources_1/new/Timer_PWM_IP.v" Line 1. Module Timer_PWM_IP doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package xil_defaultlib.ip_package
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_unsigned
+Compiling architecture timer_architecture of entity xil_defaultlib.Timer [timer_default]
+Compiling architecture pwm_arch of entity xil_defaultlib.PWM [pwm_default]
+Compiling architecture archrif of entity xil_defaultlib.Read_IF [read_if_default]
+Compiling architecture archwif of entity xil_defaultlib.Write_IF [write_if_default]
+Compiling module xil_defaultlib.Timer_PWM_IP
+Compiling architecture archtestbench of entity xil_defaultlib.TestBench [testbench_default]
+Compiling module xil_defaultlib.TB_IP_Connection
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot TB_IP_Connection_behav

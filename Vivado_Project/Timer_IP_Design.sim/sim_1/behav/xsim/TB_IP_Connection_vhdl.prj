@@ -1,0 +1,11 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Timer_IP_Design.srcs/sources_1/new/IP_Package.vhd" \
+"../../../../Timer_IP_Design.srcs/sources_1/new/PWM_Block.vhd" \
+"../../../../Timer_IP_Design.srcs/sources_1/new/Reading_Interface.vhd" \
+"../../../../Timer_IP_Design.srcs/sources_1/new/TestBench.vhd" \
+"../../../../Timer_IP_Design.srcs/sources_1/new/Timer_Block.vhd" \
+"../../../../Timer_IP_Design.srcs/sources_1/new/Writing_Interface.vhd" \
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef" \
+"../../../../Timer_IP_Design.srcs/sources_1/new/Timer_PWM_IP.v" \
+"../../../../Timer_IP_Design.srcs/sources_1/new/TB_IP_Connection.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
