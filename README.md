@@ -30,6 +30,7 @@ The following table summarizes all input and output signals, as well as the comm
 
 
 The timer supports multiple modes of operation:
+
 1.	A disabled mode where the timer is inactive
 2.	retriggerable modes where the counting cycle automatically restarts either: 
   a.	internally
@@ -37,30 +38,34 @@ The timer supports multiple modes of operation:
 3.	A non-retriggerable mode in which the counting stops once the maximum value is reached
 4.	A clock divider is available to scale the internal clock
 5.	A counter driven by the internal clock when the Gate signal is active
+
 The generation of an interrupt upon reaching the maximum count value can be enabled or disabled by the processor. The processor can configure the initial value of the timer and read the current timer value at any time.
 The PWM unit allows the processor to define the duty cycle and select the clock source, either external or derived from the timer output. The PWM output can be enabled or disabled by software.
 
 ## Architecture
 
-Our circuit “Timer_PWM_IP” will be decomposed into two main parts. 
-The first one represents the core part of the circuit. This core manages the mode of functionality of the timer and contain the necessary counter. It initializes the Timer_value and finally provide the PWM signal, based on the data of the processor. The inputs and outputs of this core are :
-  •	Init_TO: initial value of the timer.
-  •	Timer_value: current value of the timer
-  •	Gate: a user input
-  •	Config: this variable is composed into 3 parts: 
-    o	Mode: to specify on which mode for the timer we are
-    o	Max: to specify the maximum value of the counter
-    o	Start: to indicate the beginning of the counting operation 
-  •	RC_PWM: this variable is also composed into 3 parts:
-    o	RC: the duty cycle of the PWM signal output
-    o	Tmax : the period of the signal
-    o	S_Hor: the internal clock of the PWM (This clock can be different from the original clock when the timer is in the devider mode)
-  •	Validation_PWM: to enable the generation of the PWM signal
-  •	Signal_PWM: the PWM output signal
-  •	CLK: to synchronize our circuit
-  •	IT: to activate the interruption routine
+Our circuit *Timer_PWM_IP* will be decomposed into two main parts. 
+The first one represents the core part of the circuit. This core manages the mode of functionality of the timer and contain the necessary counter. It initializes the *Timer_value* and finally provide the PWM signal, based on the data of the processor. The inputs and outputs of this core are :
+
+- Init_TO: initial value of the timer
+- Timer_value: current value of the timer
+- Gate: a user input
+- Config: this variable is composed into 3 parts: 
+  - Mode: to specify on which mode for the timer we are
+  - Max: to specify the maximum value of the counter
+  - Start: to indicate the beginning of the counting operation 
+- RC_PWM: this variable is also composed into 3 parts:
+  - RC: the duty cycle of the PWM signal output
+  - Tmax : the period of the signal
+  - S_Hor: the internal clock of the PWM (This clock can be different from the original clock when the timer is in the devider mode)
+- Validation_PWM: to enable the generation of the PWM signal
+- Signal_PWM: the PWM output signal
+- CLK: to synchronize our circuit
+- IT: to activate the interruption routine
+  
 
 | **Relation Name**       | **Direction**      | **Nature**      | **Type Name**        | **Type Description**                                                        |
+|-------------------------|--------------------|-----------------|----------------------|-----------------------------------------------------------------------------|
 | Init_TO		              | Input              | Permanent	     | DefValue	            | 32-bit data bus (Array [0..31] of DefBit)                                   |
 | Validation_PWM	        | Input	             | Permanent	     | DefBit	              | PWM enable control (Active, Inactive)                                       |
 | Config	                | Input	             | Permanent	     | Defdata	            | Configuration structure including: Mode ; IT_Activation ; Max ; Start       |
@@ -77,7 +82,7 @@ The architecture of the IP is described in the figure below:
 
 ![second photo](
 
-The source code of this architecture is located in the directory Vivado_Project/Timer_IP_Design/sources_1. This directory contains all the blocks presented in the previous block diagram, each implemented in VHDL, as well as the file Timer_PWM_IP.v. This Verilog file is responsible for interconnecting the different blocks and forming the complete Timer IP architecture. The directory also includes a testbench used to validate the functionality of the IP and a top-level file that connects the testbench to the Timer IP.
+The source code of this architecture is located in the directory *Vivado_Project/Timer_IP_Design/sources_1*. This directory contains all the blocks presented in the previous block diagram, each implemented in VHDL, and contain also the file *Timer_PWM_IP.v*. This Verilog file is responsible for interconnecting the different blocks and forming the complete Timer IP architecture. The directory also includes a testbench used to validate the functionality of the IP and a top-level file that connects the testbench to the Timer IP.
 
 Although the current implementation fulfills the required functionality, the code can be further optimized and extended to support additional processor signals and interfaces. These improvements were not implemented due to time constraints.
 
