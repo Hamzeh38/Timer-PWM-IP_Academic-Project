@@ -4,11 +4,11 @@ This project has been implemented to design an IP Timer/PWM module. This IP oper
 The main role of the timer is to provide precise time measurement and event scheduling within the system. It allows the processor to generate periodic interrupts, measure time intervals, and manage delays required for real-time operations.
 The PWM module generates a configurable pulse-width modulated signal based on parameters provided by the processor. The processor controls the activation, duty cycle, and frequency, enabling accurate control of power, speed, or brightness in external devices such as motors or LEDs.
 
-## Specification
+## Specifications
 
 The schematic illustrates the external connectivity of the Timer/PWM IP, highlighting how the processor communicates with our circuit. 
 
-![First Photo](
+![First Photo](https://github.com/Hamzeh38/Timer-PWM-IP_Academic-Project/blob/main/First_image.png)
 
 The following table summarizes all input and output signals, as well as the common variables exchanged between the IP and the processor. 
 
@@ -80,7 +80,7 @@ The first one represents the core part of the circuit. This core manages the mod
 The second one consists to an interface between the microprocessor and the core. This interface let our circuit convert the input/output of the microprocessor to the input/output that we need for our circuit.  In simple word, he assures that the inputs described in the last table, have been written and organized by the processor, so he convert the value contain inside data bus into some useful values for the inputs of our core circuit. 
 The architecture of the IP is described in the figure below:
 
-![second photo](
+![second photo](https://github.com/Hamzeh38/Timer-PWM-IP_Academic-Project/blob/main/Second_image.png)
 
 The source code of this architecture is located in the directory *Vivado_Project/Timer_IP_Design/sources_1*. This directory contains all the blocks presented in the previous block diagram, each implemented in VHDL, and contain also the file *Timer_PWM_IP.v*. This Verilog file is responsible for interconnecting the different blocks and forming the complete Timer IP architecture. The directory also includes a testbench used to validate the functionality of the IP and a top-level file that connects the testbench to the Timer IP.
 
