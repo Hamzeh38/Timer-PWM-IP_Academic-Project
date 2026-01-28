@@ -13,6 +13,7 @@ The schematic illustrates the external connectivity of the Timer/PWM IP, highlig
 The following table summarizes all input and output signals, as well as the common variables exchanged between the IP and the processor. 
 
 | **Signal**	| **Direction**	        | **Description**                                                                       |
+|-------------|-----------------------|---------------------------------------------------------------------------------------|
 | Dbus	      |  Bidirectional	      |  16-bit data bus, corresponding to the processor data bus                             |
 | Addr	      |  Input	              |  23-bit address bus, corresponding to the processor address bus                       |
 | nAS	        |  Input	              |  Address Strobe signal, validates the address on the address bus                      |
