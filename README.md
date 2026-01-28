@@ -33,8 +33,8 @@ The timer supports multiple modes of operation:
 
 1.	A disabled mode where the timer is inactive
 2.	retriggerable modes where the counting cycle automatically restarts either: 
-  a.	internally
-  b.	based on an external Gate signal
+   - internally
+   - based on an external Gate signal
 3.	A non-retriggerable mode in which the counting stops once the maximum value is reached
 4.	A clock divider is available to scale the internal clock
 5.	A counter driven by the internal clock when the Gate signal is active
